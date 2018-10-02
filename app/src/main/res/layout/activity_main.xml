@@ -102,4 +102,20 @@
     android:background="@drawable/button_shape"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintRight_toRightOf="parent"/>
+
+  <ImageButton
+    android:id="@+id/win_button"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+  <ImageButton
+    android:id="@+id/lose_button_one"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+  <ImageButton
+    android:id="@+id/lose_button_two"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+  
+
+
 </android.support.constraint.ConstraintLayout>

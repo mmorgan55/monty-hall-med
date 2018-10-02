@@ -8,7 +8,10 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,8 +26,12 @@ public class MainActivity extends AppCompatActivity {
   private ImageButton button3;
   private  boolean gameStart = false;
   private Random rng;
-  private LinkedList<ImageButton> buttons;
+  private List<ImageButton> initButton;
+  private List<ImageButton> activeButtons;
   private ImageButton winButton;
+  private ImageButton loseButton1;
+  private ImageButton loseButton2;
+  private Map<ImageButton, ImageButton> buttonMap;
 
 
   @Override
@@ -50,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
 
     };
 
-
   }
 
   private void gameHasStarted () {
@@ -67,11 +73,16 @@ public class MainActivity extends AppCompatActivity {
   }
 
   private void setButtons () {
-    buttons = new LinkedList<>();
-    buttons.add(button1);
-    buttons.add(button2);
-    buttons.add(button3);
-
+    initButton = new ArrayList<>();
+    initButton.add(button1);
+    initButton.add(button2);
+    initButton.add(button3);
+    winButton = initButton.get(rng.nextInt(initButton.size()));
+    activeButtons.add(winButton);
+    loseButton1 = initButton.get(rng.nextInt(initButton.size()));
+    activeButtons.add(loseButton1);
+    loseButton2 = initButton.get(rng.nextInt(initButton.size()));
+    activeButtons.add(loseButton2);
 
   }
 
@@ -79,4 +90,5 @@ public class MainActivity extends AppCompatActivity {
   private void resetState () {
 
   }
+
 }
