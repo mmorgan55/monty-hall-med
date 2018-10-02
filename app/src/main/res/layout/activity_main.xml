@@ -5,15 +5,72 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
+  android:padding="16dp"
   tools:context=".MainActivity">
 
   <TextView
+    android:id="@+id/win_tally"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    style="@style/WinTally"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    android:text="WIN"/>
+
+  <TextView
+    android:id="@+id/lose_tally"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="Hello World!"
+    style="@style/LoseTally"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    android:text="LOSE"
+    />
+
+  <FrameLayout
+    android:id="@+id/user_format"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintLeft_toLeftOf="parent"
     app:layout_constraintRight_toRightOf="parent"
-    app:layout_constraintTop_toTopOf="parent"/>
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.205">
+
+    <TextView
+      android:id="@+id/user_info"
+      style="@style/Info"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="do you want to switch "
+      />
+
+  </FrameLayout>
+
+  <Button
+    android:id="@+id/switch_button"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="28dp"
+    android:layout_marginRight="28dp"
+
+    android:text="switch"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/user_format"/>
+
+  <Button
+    android:id="@+id/stay_button"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="28dp"
+    android:layout_marginLeft="28dp"
+    android:text="stay"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/user_format"/>
+  
+
+
+
 
 </android.support.constraint.ConstraintLayout>

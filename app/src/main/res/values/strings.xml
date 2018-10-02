@@ -1,3 +1,4 @@
 <resources>
   <string name="app_name">Monty Hall Game</string>
+  <string name="win_tally">WIN</string>
 </resources>
