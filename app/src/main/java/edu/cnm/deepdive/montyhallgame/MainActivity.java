@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
   private  boolean gameStart = false;
   private Random rng;
   private LinkedList<ImageButton> buttons;
+  private ImageButton winButton;
 
 
   @Override
@@ -41,12 +42,9 @@ public class MainActivity extends AppCompatActivity {
     button3 = findViewById(R.id.button_three);
     rng = new Random();
 
-    buttons.add(button1);
-    buttons.add(button2);
-    buttons.add(button3);
+
 
     View.OnClickListener buttonListener = (view) -> {
-
       ((ImageButton) view).setImageResource(R.drawable.button_clicked);
       gameHasStarted();
 
@@ -66,6 +64,15 @@ public class MainActivity extends AppCompatActivity {
       switchButton.setVisibility(View.VISIBLE);
       stayButton.setVisibility(View.VISIBLE);
     }
+  }
+
+  private void setButtons () {
+    buttons = new LinkedList<>();
+    buttons.add(button1);
+    buttons.add(button2);
+    buttons.add(button3);
+
+
   }
 
   //TODO reset game state and variables
